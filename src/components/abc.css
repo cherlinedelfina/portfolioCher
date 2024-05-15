@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+.responsive-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  
+  
+  
+  .about-content {
+    max-width: 600px; /* Adjust based on your preference */
+    text-align: center;
+  }
+  .carousel-controls-button {
+    position: absolute;
+    margin: 50px; 
+    width: 75px;
+    height: 40px;
+    background: #cccccc;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start; /* Start from left */
+    transition: background-color 0.3s ease;
+
+  }
+  .site-link {
+     color: white;}
+
+  .site-link:hover {
+    text-decoration: underline;
+    color: white;}
+  
+  .slider-thumb {
+    margin-top: 2px;
+    width: 36px;  
+    height: 36px;
+    background-color: rgba(169, 169, 169, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .slider-icon {
+    width: 2px;
+    height: 2px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    object-fit: contain; 
+  }
+  
+  .icon-hidden {
+    opacity: 0;
+  }
+
+  .site-lins {
+    color: '#007bff'}
+  
+    .read-more-text {
+      font-size: 0.1;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .read-more-text:hover {
+      text-decoration: underline;
+    }
+    
+  
+  
+  .thumb-right {
+    transform: translateX(36px); /* Move to the right */
+  }
+  
+  .thumb-left {
+    transform: translateX(0); /* Stay on the left */
+  }
+  
+  .slider-icon {
+    width: 24px; 
+    height: 24px; 
+    position: absolute;
+    transition: opacity 0.3s ease;
+  }
+  
+  
+  
+  .contact-button {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #fc307f, #9c12fc);
+    color: #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 50px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .responsive-section {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+    .about-content h1, .about-content p {
+      font-size: smaller; /* Adjust font size for smaller screens */
+    }
+  }
+  .project-transition {
+    transition: opacity 0.5s ease-in-out; /* You can adjust the duration and easing function */
+  }
+  
+  .project-transition.hidden {
+    opacity: 0;
+  }
+
+  .gradient-bg {
+    background:  #9c12fc;
+    opacity: 0.8 
+  }
+  
+  details[open] .plus-icon {
+    display: none;
+  }
+  details[open] .minus-icon {
+    display: inline;
+  }
+  details .minus-icon {
+    display: none;
+  }
+  details .plus-icon {
+    display: inline;
+  }
+  

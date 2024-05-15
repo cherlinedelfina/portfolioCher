@@ -3,6 +3,7 @@ import {
   MeshDistortMaterial,
   MeshWobbleMaterial,
   useScroll,
+  OrbitControls 
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
@@ -21,7 +22,7 @@ export const Experience = (props) => {
 
   const isMobile = window.innerWidth < 768;
   const responsiveRatio = viewport.width / 12;
-  const officeScaleRatio = Math.max(0.5, Math.min(0.9 * responsiveRatio, 0.9));
+  const officeScaleRatio = Math.max(1, Math.min(2 * responsiveRatio, 2)); 
 
   const [section, setSection] = useState(0);
 
@@ -82,6 +83,7 @@ export const Experience = (props) => {
   return (
     <>
       <Background />
+      
       <motion.group
         ref={characterGroup}
         rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
@@ -97,121 +99,46 @@ export const Experience = (props) => {
             scaleZ: officeScaleRatio,
           },
           1: {
-            y: -viewport.height + 0.5,
-            x: isMobile ? 0.3 : 0,
-            z: 7,
+            y: isMobile ?-viewport.height + 1 : -viewport.height + 0.8,
+            x: isMobile ? 0.6 : 1.4,
+            z: 6.5,
             rotateX: 0,
-            rotateY: isMobile ? -Math.PI / 2 : 0,
-            rotateZ: 0,
-            scaleX: isMobile ? 1.5 : 1,
-            scaleY: isMobile ? 1.5 : 1,
-            scaleZ: isMobile ? 1.5 : 1,
-          },
-          2: {
-            x: isMobile ? -1.4 : -2,
-            y: -viewport.height * 2 + 0.5,
-            z: 0,
-            rotateX: 0,
-            rotateY: Math.PI / 2,
-            rotateZ: 0,
-            scaleX: 1,
-            scaleY: 1,
-            scaleZ: 1,
-          },
-          3: {
-            y: -viewport.height * 3 + 1,
-            x: 0.24,
-            z: 8.5,
-            rotateX: 0,
-            rotateY: -Math.PI / 4,
-            rotateZ: 0,
-            scaleX: 1,
-            scaleY: 1,
-            scaleZ: 1,
-          },
+            rotateY: isMobile ? -Math.PI / 6 : 5.5,
+            rotateZ: 0.1,
+            scaleX: isMobile ? 0.7 : 0.9,
+            scaleY: isMobile ? 0.7 : 0.9,
+            scaleZ: isMobile ? 0.7 : 0.9,
+          }
         }}
       >
-        <Avatar animation={characterAnimation} wireframe={section === 1} />
+        <Avatar animation={characterAnimation} scale={[1.2, 1.2, 1.2]} wireframe={section === 1} />
       </motion.group>
       <ambientLight intensity={1} />
       <motion.group
         position={[
-          isMobile ? 0 : 1.5 * officeScaleRatio,
-          isMobile ? -viewport.height / 6 : 2,
+          
+          isMobile ? -0.9 * officeScaleRatio : 0.3 * officeScaleRatio,
+          isMobile ? -viewport.height / 6 - 3 : - 2,
           3,
         ]}
-        scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
+        scale={[officeScaleRatio, officeScaleRatio,officeScaleRatio]}
         rotation-y={-Math.PI / 4}
         animate={{
-          y: isMobile ? -viewport.height / 6 : 0,
+          y: isMobile ? -viewport.height / 6 - 1 : -2,
         }}
         transition={{
           duration: 0.8,
         }}
       >
+
+
         <Office section={section} />
         <group
           ref={characterContainerAboutRef}
           name="CharacterSpot"
-          position={[0.07, 0.16, -0.57]}
+          position={[-0.2, 0.25, -0.55]} 
           rotation={[-Math.PI, 0.42, -Math.PI]}
         ></group>
-      </motion.group>
-
-      {/* SKILLS */}
-      <motion.group
-        position={[
-          0,
-          isMobile ? -viewport.height : -1.5 * officeScaleRatio,
-          -10,
-        ]}
-        animate={{
-          z: section === 1 ? 0 : -10,
-          y:
-            section === 1
-              ? -viewport.height
-              : isMobile
-              ? -viewport.height
-              : -1.5 * officeScaleRatio,
-        }}
-      >
-        <directionalLight position={[-5, 3, 5]} intensity={0.4} />
-        <Float>
-          <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={0.4}
-              speed={4}
-              color={"red"}
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={1}
-              speed={5}
-              color="yellow"
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[1.4, 1.4, 1.4]} position={[-3, -1, -11]}>
-            <boxGeometry />
-            <MeshWobbleMaterial
-              opacity={0.8}
-              transparent
-              factor={1}
-              speed={5}
-              color={"blue"}
-            />
-          </mesh>
-        </Float>
       </motion.group>
       <Projects />
     </>

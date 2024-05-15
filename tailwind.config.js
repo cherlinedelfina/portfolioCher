@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        '8.5xl': '5rem',  // Example size, adjust as needed
+      }
+    },
   },
   plugins: [],
+  
 };

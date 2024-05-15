@@ -10,6 +10,22 @@ let outlineY = 0;
 export const Cursor = () => {
   const cursorOutline = useRef();
   const [hoverButton, setHoverButton] = useState(false);
+  const defaultStyle = {
+    background: 'white',
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%',
+    boxShadow: '0 0 8px 2px #a855f7', // Purple glow
+};
+
+const hoverStyle = {
+    background: 'transparent',
+    border: '2px solid #5b21b6', // Purple border
+    width: '15px',
+    height: '15px',
+    boxShadow: '0 0 8px 2px #a855f7', // Purple glow
+};
+
 
   const animate = () => {
     let distX = mouseX - outlineX;
@@ -64,12 +80,8 @@ export const Cursor = () => {
   return (
     <>
       <div
-        className={`invisible md:visible  z-50 fixed -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none transition-transform
-        ${
-          hoverButton
-            ? "bg-transparent border-2 border-indigo-900 w-5 h-5"
-            : "bg-indigo-500 w-3 h-3"
-        }`}
+        className="invisible md:visible z-50 fixed -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none transition-transform"
+        style={hoverButton ? hoverStyle : defaultStyle} // Use the style object
         ref={cursorOutline}
       ></div>
     </>

@@ -12,7 +12,7 @@ import * as THREE from "three";
 
 export function Office(props) {
   const { section } = props;
-  const { nodes, materials } = useGLTF("models/scene.gltf");
+  const { nodes, materials } = useGLTF("models/scene1.gltf");
   const texture = useTexture("textures/baked.jpg");
   const textureVSCode = useVideoTexture("textures/vscode.mp4");
 
@@ -47,304 +47,71 @@ export function Office(props) {
     textureMaterial.opacity = textureOpacity.get();
     textureGlassMaterial.opacity = glassTextureOpacity.get();
   });
-
   return (
     <group {...props} dispose={null}>
-      <mesh
-        name="Screen"
-        geometry={nodes.Screen.geometry}
-        position={[0.45, 0.94, -1.72]}
-        rotation={[Math.PI, -1.1, Math.PI]}
-      >
-        <meshBasicMaterial map={textureVSCode} toneMapped={false} />
-      </mesh>
-      <group
-        name="Desk"
-        position={[-0.07, 0, -1.52]}
-        rotation={[0, -Math.PI / 2, 0]}
-      >
-        <mesh
-          name="Plane001_Plane002_BlackWood001"
-          geometry={nodes.Plane001_Plane002_BlackWood001.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Plane001_Plane002_BlackWood001_1"
-          geometry={nodes.Plane001_Plane002_BlackWood001_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Plane001_Plane002_BlackWood001_2"
-          geometry={nodes.Plane001_Plane002_BlackWood001_2.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Plane001_Plane002_BlackWood001_3"
-          geometry={nodes.Plane001_Plane002_BlackWood001_3.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Plane001_Plane002_BlackWood001_4"
-          geometry={nodes.Plane001_Plane002_BlackWood001_4.geometry}
-          material={textureMaterial}
-        />
-      </group>
-      <group name="SM_ShelfSM_Shelf1" position={[-0.87, 1.69, -2.04]}>
-        <mesh
-          name="SM_ShelfSM_Shelf1_1"
-          geometry={nodes.SM_ShelfSM_Shelf1_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="SM_ShelfSM_Shelf1_1_1"
-          geometry={nodes.SM_ShelfSM_Shelf1_1_1.geometry}
-          material={textureMaterial}
-        />
-      </group>
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="LavaLamp"
-        position={[-1.3, 2.07, -1.99]}
-      >
-        <mesh
-          name="Node-Mesh001"
-          geometry={nodes["Node-Mesh001"].geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Node-Mesh001_1"
-          geometry={nodes["Node-Mesh001_1"].geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Node-Mesh001_2"
-          geometry={nodes["Node-Mesh001_2"].geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <motion.mesh
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="WawaRug"
-        geometry={nodes.WawaRug.geometry}
-        material={textureMaterial}
-        position={[-0.28, 0.01, 0.76]}
-      />
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="salameche"
-        position={[-0.61, 2.04, -1.96]}
-        rotation={[-Math.PI, 0.73, -Math.PI]}
-      >
-        <mesh
-          name="mesh434900071"
-          geometry={nodes.mesh434900071.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh434900071_1"
-          geometry={nodes.mesh434900071_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh434900071_2"
-          geometry={nodes.mesh434900071_2.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh434900071_3"
-          geometry={nodes.mesh434900071_3.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh434900071_4"
-          geometry={nodes.mesh434900071_4.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh434900071_5"
-          geometry={nodes.mesh434900071_5.geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <group
-        name="keyboard"
-        position={[0.21, 0.98, -1.21]}
-        rotation={[0, -0.22, 0]}
-        scale={0.63}
-      >
-        <mesh
-          name="mesh425587018"
-          geometry={nodes.mesh425587018.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh425587018_1"
-          geometry={nodes.mesh425587018_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh425587018_2"
-          geometry={nodes.mesh425587018_2.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh425587018_3"
-          geometry={nodes.mesh425587018_3.geometry}
-          material={textureMaterial}
-        />
-      </group>
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="iMac"
-        position={[0.45, 0.94, -1.72]}
-        rotation={[Math.PI, -1.1, Math.PI]}
-      >
-        <mesh
-          name="iMac_1_1"
-          geometry={nodes.iMac_1_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="iMac_1_2"
-          geometry={nodes.iMac_1_2.geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <mesh
-        name="Comp_Mouse"
-        geometry={nodes.Comp_Mouse.geometry}
-        material={textureMaterial}
-        position={[-0.01, 0, 0.08]}
-      />
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="plant"
-        position={[-0.78, 1.07, -1.61]}
-      >
-        <mesh
-          name="mesh24448074"
-          geometry={nodes.mesh24448074.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh24448074_1"
-          geometry={nodes.mesh24448074_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="mesh24448074_2"
-          geometry={nodes.mesh24448074_2.geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="Houseplant_7"
-        position={[-2.02, -0.04, -1.53]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      >
-        <mesh
-          name="Houseplant_7_1"
-          geometry={nodes.Houseplant_7_1.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Houseplant_7_2"
-          geometry={nodes.Houseplant_7_2.geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Houseplant_7_3"
-          geometry={nodes.Houseplant_7_3.geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="palm_tree_01"
-        position={[2.13, -0.08, -1.06]}
-        rotation={[-Math.PI, 0.67, -Math.PI]}
-      >
-        <mesh
-          name="palm_tree_01-Mesh"
-          geometry={nodes["palm_tree_01-Mesh"].geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="palm_tree_01-Mesh_1"
-          geometry={nodes["palm_tree_01-Mesh_1"].geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="palm_tree_01-Mesh_2"
-          geometry={nodes["palm_tree_01-Mesh_2"].geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <motion.group
-        scale={[0, 0, 0]}
-        animate={{
-          scale: section === 0 ? 1 : 0,
-        }}
-        name="Chair"
-        position={[0.09, 0, -0.66]}
-        rotation={[0, -0.35, 0]}
-      >
-        <mesh
-          name="Node-Mesh"
-          geometry={nodes["Node-Mesh"].geometry}
-          material={textureMaterial}
-        />
-        <mesh
-          name="Node-Mesh_1"
-          geometry={nodes["Node-Mesh_1"].geometry}
-          material={textureMaterial}
-        />
-      </motion.group>
-      <mesh
-        name="Plane001"
-        geometry={nodes.Plane001.geometry}
-        material={textureMaterial}
-      />
-      <mesh
-        name="Plane001_1"
-        geometry={nodes.Plane001_1.geometry}
-        material={textureMaterial}
-      />
-      <mesh
-        name="Plane001_2"
-        geometry={nodes.Plane001_2.geometry}
-        material={textureMaterial}
-      />
-      <mesh
-        name="Plane001_3"
-        geometry={nodes.Plane001_3.geometry}
-        material={textureGlassMaterial}
-      />
+    <group name="Desk" position={[-0.065, 0.062, -1.491]} rotation={[0, -Math.PI / 2, 0]} scale={[1, 1.112, 1]}>
+      <mesh name="Plane001_Plane002_BlackWood001_" geometry={nodes.Plane001_Plane002_BlackWood001_.geometry} material={textureMaterial} />
+      <mesh name="Plane001_Plane002_BlackWood001__1" geometry={nodes.Plane001_Plane002_BlackWood001__1.geometry} material={textureMaterial}/>
+      <mesh name="Plane001_Plane002_BlackWood001__2" geometry={nodes.Plane001_Plane002_BlackWood001__2.geometry} material={textureMaterial}/>
+      <mesh name="Plane001_Plane002_BlackWood001__3" geometry={nodes.Plane001_Plane002_BlackWood001__3.geometry} material={textureMaterial} />
+      <mesh name="Plane001_Plane002_BlackWood001__4" geometry={nodes.Plane001_Plane002_BlackWood001__4.geometry} material={textureMaterial}/>
     </group>
-  );
+    <group name="SM_ShelfSM_Shelf1" position={[-0.337, 2.041, -1.889]} scale={[1, 1.112, 1]}>
+      <mesh name="SM_ShelfSM_Shelf1_1" geometry={nodes.SM_ShelfSM_Shelf1_1.geometry} material={textureMaterial} />
+      <mesh name="SM_ShelfSM_Shelf1_1_1" geometry={nodes.SM_ShelfSM_Shelf1_1_1.geometry} material={textureMaterial} />
+    </group>
+    <group name="keyboard" position={[0.06, 1.153, -1.363]} rotation={[0, -0.165, 0]} scale={[1, 1.112, 1]}>
+      <mesh name="mesh425587018" geometry={nodes.mesh425587018.geometry} material={textureMaterial} />
+      <mesh name="mesh425587018_1" geometry={nodes.mesh425587018_1.geometry} material={textureMaterial}/>
+      <mesh name="mesh425587018_2" geometry={nodes.mesh425587018_2.geometry} material={textureMaterial} />
+      <mesh name="mesh425587018_3" geometry={nodes.mesh425587018_3.geometry}material={textureMaterial} />
+    </group>
+    <group name="iMac" position={[0.588, 1.087, -1.721]} rotation={[Math.PI, -1.099, Math.PI]} scale={[1, 1.112, 1]}>
+      <mesh name="iMac_1" geometry={nodes.iMac_1.geometry} material={textureMaterial} />
+      <mesh name="iMac_1_1" geometry={nodes.iMac_1_1.geometry} material={textureMaterial} />
+      <mesh name="iMac_1_2" geometry={nodes.iMac_1_2.geometry} material={textureMaterial}/>
+    </group>
+    <mesh name="Comp_Mouse" geometry={nodes.Comp_Mouse.geometry} material={textureMaterial} position={[0.05, 0.055, -0.052]} scale={[1, 1.112, 1]} />
+    <group name="plant" position={[-0.771, 1.253, -1.58]} scale={[1, 1.112, 1]}>
+      <mesh name="mesh24448074" geometry={nodes.mesh24448074.geometry} material={textureMaterial} />
+      <mesh name="mesh24448074_1" geometry={nodes.mesh24448074_1.geometry} material={textureMaterial} />
+      <mesh name="mesh24448074_2" geometry={nodes.mesh24448074_2.geometry} material={textureMaterial} />
+    </group>
+    <group name="Houseplant_7" position={[1.212, -0.075, -1.472]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh name="Houseplant_7_1" geometry={nodes.Houseplant_7_1.geometry} material={textureMaterial} />
+      <mesh name="Houseplant_7_2" geometry={nodes.Houseplant_7_2.geometry} material={textureMaterial} />
+      <mesh name="Houseplant_7_3" geometry={nodes.Houseplant_7_3.geometry} material={textureMaterial} />
+    </group>
+    <group name="Chair" position={[-0.278, 0, -0.708]} rotation={[0, -0.376, 0]} scale={[1, 0.852, 1]}>
+      <mesh name="Node-Mesh" geometry={nodes['Node-Mesh'].geometry} material={textureMaterial} />
+      <mesh name="Node-Mesh_1" geometry={nodes['Node-Mesh_1'].geometry} material={textureMaterial}/>
+    </group>
+    <group name="group1445929716002" position={[-0.198, 2.164, -1.898]} scale={[1, 1.112, 1]}>
+      <mesh name="mesh1445929716002" geometry={nodes.mesh1445929716002.geometry} material={textureMaterial}/>
+      <mesh name="mesh1445929716002_1" geometry={nodes.mesh1445929716002_1.geometry} material={textureMaterial} />
+      <mesh name="mesh1445929716002_2" geometry={nodes.mesh1445929716002_2.geometry} material={textureMaterial}/>
+      <mesh name="mesh1445929716002_3" geometry={nodes.mesh1445929716002_3.geometry} material={textureMaterial}/>
+      <mesh name="mesh1445929716002_4" geometry={nodes.mesh1445929716002_4.geometry} material={textureMaterial} />
+      <mesh name="mesh1445929716002_5" geometry={nodes.mesh1445929716002_5.geometry} material={textureMaterial} />
+      <mesh name="mesh1445929716002_6" geometry={nodes.mesh1445929716002_6.geometry} material={textureMaterial}/>
+      <mesh name="mesh1445929716002_7" geometry={nodes.mesh1445929716002_7.geometry} material={textureMaterial} />
+    </group>
+    <group name="Node" position={[-0.84, 2.182, -1.897]} rotation={[1.153, 0.212, 0.156]} scale={[1.007, 1.016, 1.09]}>
+      <mesh name="Node-Mesh002" geometry={nodes['Node-Mesh002'].geometry} material={textureMaterial} />
+      <mesh name="Node-Mesh002_1" geometry={nodes['Node-Mesh002_1'].geometry} material={textureMaterial}/>
+      <mesh name="Node-Mesh002_2" geometry={nodes['Node-Mesh002_2'].geometry} material={textureMaterial} />
+      <mesh name="Node-Mesh002_3" geometry={nodes['Node-Mesh002_3'].geometry} material={textureMaterial}/>
+      <mesh name="Node-Mesh002_4" geometry={nodes['Node-Mesh002_4'].geometry}material={textureMaterial} />
+      <mesh name="Node-Mesh002_5" geometry={nodes['Node-Mesh002_5'].geometry} material={textureMaterial}/>
+      <mesh name="Node-Mesh002_6" geometry={nodes['Node-Mesh002_6'].geometry} material={textureMaterial} />
+      <mesh name="Node-Mesh002_7" geometry={nodes['Node-Mesh002_7'].geometry} material={textureMaterial} />
+      <mesh name="Node-Mesh002_8" geometry={nodes['Node-Mesh002_8'].geometry}material={textureMaterial}/>
+      <mesh name="Node-Mesh002_9" geometry={nodes['Node-Mesh002_9'].geometry} material={textureMaterial} />
+    </group>
+  </group>
+)
 }
 
-useGLTF.preload("models/scene.gltf");
+
+useGLTF.preload("models/1.gltf");
 useTexture.preload("textures/baked.jpg");
