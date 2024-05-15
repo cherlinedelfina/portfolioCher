@@ -1,10 +1,11 @@
 import { useProgress } from "@react-three/drei";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import './abc.css';
 
 export const LoadingScreen = (props) => {
   const { started, setStarted } = props;
   const { progress, total, loaded, item } = useProgress();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     console.log(progress, total, loaded, item);
@@ -14,6 +15,21 @@ export const LoadingScreen = (props) => {
       }, 500);
     }
   }, [progress, total, loaded, item]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the threshold as needed
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div
@@ -35,13 +51,20 @@ export const LoadingScreen = (props) => {
         >
           Cherline Delfina
         </div>
-        <div className="opacity-40 pt-8" style={{ 
-            fontFamily: "'Sometype Mono', monospace",
-            background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            display: 'inline'
-        }}>Cherline Delfina</div>
+        {!isMobile && (
+          <div
+            className="opacity-40 pt-8"
+            style={{
+              fontFamily: "'Sometype Mono', monospace",
+              background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline',
+            }}
+          >
+            Cherline Delfina
+          </div>
+        )}
       </div>
     </div>
   );

@@ -80,6 +80,7 @@ export const Experience = (props) => {
     // console.log([euler.x, euler.y, euler.z]);
   });
 
+
   return (
     <>
       <Background />
@@ -97,13 +98,16 @@ export const Experience = (props) => {
             scaleX: officeScaleRatio,
             scaleY: officeScaleRatio,
             scaleZ: officeScaleRatio,
+      
+           
+      
           },
           1: {
             y: isMobile ?-viewport.height + 1 : -viewport.height + 0.8,
             x: isMobile ? 0.6 : 1.4,
             z: 6.5,
             rotateX: 0,
-            rotateY: isMobile ? -Math.PI / 6 : 5.5,
+            rotateY: isMobile ? -Math.PI / 4 :-Math.PI / 4,
             rotateZ: 0.1,
             scaleX: isMobile ? 0.7 : 0.9,
             scaleY: isMobile ? 0.7 : 0.9,
@@ -124,7 +128,7 @@ export const Experience = (props) => {
         scale={[officeScaleRatio, officeScaleRatio,officeScaleRatio]}
         rotation-y={-Math.PI / 4}
         animate={{
-          y: isMobile ? -viewport.height / 6 - 1 : -2,
+          y: isMobile ? -viewport.height / 6 - 2.5 : -2,
         }}
         transition={{
           duration: 0.8,

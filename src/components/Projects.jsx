@@ -86,7 +86,7 @@ export const projects = [
   {
     title: "Self-Driving Car Dashboard",
     image: "projects/selfdrivecar.png",
-    description: "Interactive dashboard report on self-driving car queries.s",
+    description: "Interactive dashboard report on self-driving car queries.",
   },
 ];
 

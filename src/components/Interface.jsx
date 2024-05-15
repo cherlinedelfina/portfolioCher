@@ -6,6 +6,8 @@ import "./abc.css";
 import { useInView } from 'react-intersection-observer';
 import { useState,useEffect } from 'react';
 
+
+
 const Section = (props) => {
   const { children, mobileTop } = props;
 
@@ -36,65 +38,106 @@ const Section = (props) => {
 
 
 export const Interface = (props) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the threshold as needed
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const { setSection } = props;
+
   return (
-    <div className="flex flex-col items-center w-screen ml-8">
+    <div className={`flex flex-col items-center w-screen ml-${isMobile ? '1' : '8'}`}>
       <AboutSection setSection={setSection} />
       <ExperienceSection />
-      <ProjectsSection />
-      
+      <div className={`ml-8`}>
+        <ProjectsSection />
+      </div>
     </div>
   );
+  
 };
+
 
 const AboutSection = (props) => {
   const { setSection } = props;
+  const [isMobile, setIsMobile] = useState(false);
+  
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the threshold as needed
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const openResume = () => {
-    window.open('/projects/resume.pdf', '_blank');
+    window.open('projects/Resume.png', '_blank');
   };
 
   return (
     <Section mobileTop>
-       <span className="px-1 text-sm sm:text-base md:text-xl pb-2" style={{
-          marginTop: '30px',
-          fontFamily: "'Sometype Mono', monospace",
-          background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          display: 'inline'
+      <span className="px-1 text-sm sm:text-base md:text-xl pb-2" style={{
+        marginTop: '30px',
+        fontFamily: "'Sometype Mono', monospace",
+        background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        display: 'inline'
       }}>Hi there! My name is</span>
-      <h1 className="text-6xl md:text-6xl lg:text-9xl  font-bold leading-snug mt-8 md:mt-0 pb-8" style={{ color: 'white', fontFamily: "'League Spartan', sans-serif"}}>
-      Cherline
+      <h1 className="text-6xl md:text-6xl lg:text-9xl  font-bold leading-snug mt-8 md:mt-0 pb-8" style={{ color: 'white', fontFamily: "'League Spartan', sans-serif" }}>
+        Cherline
         <br />
-        <span className=" px-1 " style={{ color: 'white', fontFamily: "'League Spartan', sans-serif"}}>Delfina</span>
+        <span className=" px-1 " style={{ color: 'white', fontFamily: "'League Spartan', sans-serif" }}>Delfina</span>
       </h1>
       <motion.p
-        className="px-1 text-sm sm:text-base md:text-lg " style={{ fontFamily: "'Sometype Mono', monospace", color: '#cccccc'}}
-        initial={{
-          opacity: 0,
-          y: 25,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 1,
-          delay: 1.5,
-        }}
-      >
-        I'm pursuing my Master's in Artificial Intelligence
-        <br />
-        at Monash University, with experience in full-stack 
-        <br />
-        software development. Additionally, I enjoy art and 
-        <br />
-        possess a keen eye for designing and coding clean,
-        <br />
-        interactive frontends.
-      </motion.p>
-      <motion.button 
+  className="px-1 text-sm sm:text-base md:text-lg"
+  style={{
+    fontFamily: "'Sometype Mono', monospace",
+    color: '#cccccc',
+    whiteSpace: 'normal', /* Allow text to wrap to the next line */
+    overflow: 'hidden',   /* Hide overflowing content */
+    maxWidth: isMobile ? '100%' : 'calc(100% / 2.5)', /* Adjust width based on isMobile */
+    width: '100%',    /* Default to full width */
+    textAlign: 'left',  /* Align text to the right */
+  }}
+  initial={{
+    opacity: 0,
+    y: 25,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 1,
+    delay: 1.5,
+  }}
+>
+  I'm pursuing my Master's in Artificial Intelligence at Monash University, with experience in full-stack software development. Additionally, I enjoy art and possess a keen eye for designing and coding clean, interactive frontends.
+</motion.p>
+
+
+      <motion.button
         className="px-1 text-sm sm:text-base md:text-md pb-3 mt-12 pt-3 pl-6 pr-6"
         onClick={openResume}
         style={{
@@ -122,6 +165,7 @@ const AboutSection = (props) => {
 };
 
 
+
 const ExperienceSection = () => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Set to true if you want the animation to occur only once
@@ -132,19 +176,19 @@ const ExperienceSection = () => {
       title: "Artificial Intelligence Engineer",
       company: "Monash DeepNeuron",
       duration: "Apr 2023 - Present",
-      description: 'Collaborated with a team of 5 to develop a generative model integrating GNN backbone, advanced graph learning techniques, and diffusion models to create images from scene graph descriptions.', 
+      description: 'Collaborated with a team of 5 to develop a generative model integrating GNN backbone, advanced graph learning techniques, and diffusion models to create images from scene graph descriptions. Presented findings at the 2023 Monash DeepNeuron Winter Project Showcase.', 
     },
     { 
       title: 'Lead Technical Consultant',
       company: '180 Degrees Consulting',
       duration: 'Jul 2023 - Jan 2024',
-      description: 'Led a team of 7 to successfully develop a web application for Mobilise, fostering collaboration and efficiently organizing tasks using sprints to ensure a streamlined workflow and optimized team performance. Maintained bi-weekly communication with the client for project updates through Zoom.', 
+      description: 'Led a team of 7 in developing a web application for Mobilise using Jira sprint methodology. Worked as a full-stack developer, providing training to team members on Django, React.js, and MySQL. Maintained regular bi-weekly communication with our client via Zoom to provide project updates.', 
     },
     { 
       title: 'Technical Consultant', 
       company: '180 Degrees Consulting',
       duration: 'Feb 2023 - Jun 2023',
-      description: 'Collaborated with a team of 5 to develop a safe sleep mobile application for Red Nose, taking the lead in UI/UX design and frontend development. Awarded for best content in 180DC semester 1, 2023.',
+      description: 'Collaborated with a team of 5 to develop a safe sleep mobile application for Red Nose, taking the lead in UI/UX design and primarily focusing on frontend development. Awarded for best content in 180DC semester 1, 2023.',
     },
     { 
       title: 'Media Officer', 

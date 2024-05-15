@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import storysearch1 from './readmore/storysearch.png';
-import storysearch2 from './readmore/storysearch2.png';
-import storysearch3 from './readmore/storysearch3.png';
-import storysearch4 from './readmore/storysearch4.png';
-import storysearch5 from './readmore/storysearch5.png';
+import storysearch1 from './readmore/StorySearch.png';
+import storysearch2 from './readmore/StorySearch2.png';
+import storysearch3 from './readmore/StorySearch3.png';
+import storysearch4 from './readmore/StorySearch4.png';
+import storysearch5 from './readmore/StorySearch5.png';
 import './carousel1.css';
 
 const Carousel = () => {
