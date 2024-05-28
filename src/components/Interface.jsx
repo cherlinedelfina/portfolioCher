@@ -96,15 +96,17 @@ const AboutSection = (props) => {
 
   return (
     <Section mobileTop>
-      <span className="px-1 text-sm sm:text-base md:text-xl pb-2" style={{
-        marginTop: '30px',
+      <span className="px-1 text-sm sm:text-base md:text-xl" style={{
+        marginTop: '20px',
+        paddingBottom: isMobile ? '0rem' : '0.5rem',
         fontFamily: "'Sometype Mono', monospace",
         background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         display: 'inline'
       }}>Hi there! My name is</span>
-      <h1 className="text-6xl md:text-6xl lg:text-9xl  font-bold leading-snug mt-8 md:mt-0 pb-8" style={{ color: 'white', fontFamily: "'League Spartan', sans-serif" }}>
+      <h1 className="text-6xl md:text-6xl lg:text-9xl  font-bold leading-snug" style={{ color: 'white', fontFamily: "'League Spartan', sans-serif" ,
+    paddingBottom: isMobile ? '0rem' : '2rem', }}>
         Cherline
         <br />
         <span className=" px-1 " style={{ color: 'white', fontFamily: "'League Spartan', sans-serif" }}>Delfina</span>
@@ -138,12 +140,13 @@ const AboutSection = (props) => {
 
 
       <motion.button
-        className="px-1 text-sm sm:text-base md:text-md pb-3 mt-12 pt-3 pl-6 pr-6"
+        className="px-1 text-sm sm:text-base md:text-md pb-3 pt-3 pl-6 pr-6"
         onClick={openResume}
         style={{
           background: 'linear-gradient(45deg, #fc307f, #9c12fc)',
           color: '#cccccc',
-          borderRadius: '10px'
+          borderRadius: '10px', 
+          marginTop: isMobile ? '8px' : '48px'
         }}
         initial={{
           opacity: 0,
@@ -167,6 +170,25 @@ const AboutSection = (props) => {
 
 
 const ExperienceSection = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [threshold, setThreshold] = useState(isMobile ? 1 : 0.5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 1024;
+      setIsMobile(mobile);
+      setThreshold(mobile ? 1 : 0.5);
+    }; // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const { ref, inView } = useInView({
     triggerOnce: false, // Set to true if you want the animation to occur only once
     threshold: 0.5 // Adjust this threshold as needed
@@ -182,7 +204,7 @@ const ExperienceSection = () => {
       title: 'Lead Technical Consultant',
       company: '180 Degrees Consulting',
       duration: 'Jul 2023 - Jan 2024',
-      description: 'Led a team of 7 in developing a web application for Mobilise using Jira sprint methodology. Worked as a full-stack developer, providing training to team members on Django, React.js, and MySQL. Maintained regular bi-weekly communication with our client via Zoom to provide project updates.', 
+      description: 'Led a team of 7 in developing a web application for Mobilise using Jira sprint methodology. Worked as a full-stack software developer, providing training to team members on Django, React.js, and PostgreSQL. Maintained regular bi-weekly communication with our client via Zoom to provide project updates.', 
     },
     { 
       title: 'Technical Consultant', 
@@ -238,7 +260,7 @@ const ExperienceSection = () => {
       
      <Section>
         <div className="relative w-full">
-          <div className="w-3/5">
+          <div className={`${isMobile ? 'w-full' : 'w-3/5'}`}>
             <h2 className="text-3xl md:text-7xl text-white font-bold" style={{ fontFamily: "'League Spartan', sans-serif"}}>Professional Experience</h2>
             <div className="mt-8">
               {experiences.map((exp, index) => (
@@ -282,6 +304,23 @@ const ExperienceSection = () => {
 
 
 const ProjectsSection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the threshold as needed
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   const [currentProject, setCurrentProject] = useAtom(currentProjectAtom);
 
@@ -295,7 +334,7 @@ const ProjectsSection = () => {
   
 
   return (
-    <div className="mt-80 " style={{ paddingTop: '20px'}}> 
+    <div className="mt-80 " style={{ paddingTop: isMobile ? '0px' : '20px',paddingLeft: isMobile ? '20px' : '0px',}}> 
     <Section >
       <div className="flex w-full h-full gap-8 items-center justify-center mt-60 pr-20 ">
         <button
@@ -309,7 +348,8 @@ const ProjectsSection = () => {
           ← Previous
         </button>
         <h2 className="text-4xl md:text-8xl font-bold" style={{
-    fontFamily: "'League Spartan', sans-serif",color: 'white',paddingLeft: '4rem',paddingRight: '4rem',
+    fontFamily: "'League Spartan', sans-serif",color: 'white',paddingLeft: isMobile ? '0.5rem' : '4rem',
+    paddingRight: isMobile ? '1rem' : '4rem',
    }}>Projects</h2>
         <button
           className="hover:text-indigo-600 transition-colors text-sm md:text-lg"  style={{ color: '#cccccc', fontFamily: "'Sometype Mono', monospace", 

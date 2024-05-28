@@ -1,10 +1,18 @@
 .carousel-container3 {
   max-width: 100%; /* Adjusted to utilize available width */
   position: relative;
-  margin-left: 100px; /* Center the carousel horizontally */
-  margin-right: 100px; /* Center the carousel horizontally */
+  margin-left: 50px; /* Center the carousel horizontally */
+  margin-right: 50px; /* Center the carousel horizontally */
   margin-top: -10px;
   margin-bottom: 40px;
+}
+
+
+@media (min-width: 768px) {
+  .carousel-container3 {
+    margin-left: 100px; /* For desktop */
+    margin-right: 100px;
+  }
 }
 
 @keyframes shadow-change {
@@ -16,6 +24,20 @@
   }
 
 }
+
+.image-container3 {
+  width: 22%; /* Adjust as needed to fit 4 images per row with some spacing */
+  margin: 20px;
+}
+
+/* For smaller screens */
+@media (max-width: 1024px) {
+  .image-container3 {
+    width: 45%; /* Adjust as needed to fit 2 images per row */
+    margin: 5px;
+  }
+}
+
 
 
 

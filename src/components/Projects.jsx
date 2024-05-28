@@ -63,6 +63,12 @@ export const projects = [
     description: "Hydration monitoring solution that utilizes convolutional neural network to assess hydration levels from Electrodermal Activity.",
   },
   {
+    title: "Skin Lesion Classification",
+    url: "/skinlesion",
+    image: "projects/skin1.png",
+    description: "Skin lesion identification website with convolutional neural network.",
+  },
+  {
     title: "Image Generation",
     image: "projects/GNN.png",
     description: "A generative model utilizing graph neural network  to produce images from scene graph descriptions.",
@@ -71,11 +77,6 @@ export const projects = [
     title: "Road Entity Detection System",
     image: "projects/collision.png",
     description: "Trained a model to detect road entities through a traffic dashcam using convolutional neural network architecture.",
-  },
-  {
-    title: "Skin Lesion Classification",
-    image: "projects/skinLesion.png",
-    description: "Utilized convolutional neural network architectures for skin lesion identification.",
   },
   {
     title: "US Plastic Surgery Trends",

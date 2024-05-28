@@ -1,11 +1,19 @@
 .carousel-container {
   max-width: 100%; /* Adjusted to utilize available width */
   position: relative;
-  margin-left: 100px; /* Center the carousel horizontally */
-  margin-right: 100px; /* Center the carousel horizontally */
   margin-top: 70px;
   margin-bottom: 40px;
+  margin-left: 50px; /* Default for mobile */
+  margin-right: 50px; /* Center the carousel horizontally */
 }
+
+@media (min-width: 1568px) {
+  .carousel-container {
+    margin-left: 100px; /* For desktop */
+    margin-right: 100px;
+  }
+}
+
 
 @keyframes shadow-change {
   from {

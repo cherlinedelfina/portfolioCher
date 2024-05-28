@@ -15,6 +15,7 @@ import TestPage2 from "./components/rednose/rednose";
 import TestPage3 from "./components/mobilise/mobilise";
 import TestPage4 from "./components/storysearch/storysearch";
 import TestPage5 from "./components/hydrosync/hydrosync";
+import TestPage40 from "./components/skinlesion/skinlesion";
 
 function App() {
   const [section, setSection] = useState(0);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/mobilise" element={<TestPage3 />} /> {/* Define route for TestPage2 */}
         <Route path="/storysearch" element={<TestPage4 />} /> {/* Define route for TestPage2 */}
         <Route path="/hydrosync" element={<TestPage5 />} /> {/* Define route for TestPage2 */}
+        <Route path="/skinlesion" element={<TestPage40 />} /> {/* Define route for TestPage2 */}
         <Route path="/*" element={<AppContent />} /> {/* Fallback route */}
       </Routes>
     </BrowserRouter>

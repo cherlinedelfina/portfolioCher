@@ -11,12 +11,17 @@
 .carousel-container1 {
   max-width: 80%; /* Adjusted to utilize available width */
   position: relative;
-  margin-left: 25px; /* Center the carousel horizontally */
+  margin-left: 35px; /* Center the carousel horizontally */
   margin-right: 0px; /* Center the carousel horizontally */
   margin-top: 70px;
   margin-bottom: 40px;
 }
-
+@media (min-width: 768px) {
+  .carousel-container1 {
+    margin-left: 25px; /* Center the carousel horizontally */
+  margin-right: 0px; /* Center the carousel horizontally */
+  }
+}
 .carousel-image1 {
   max-width: 100%; /* Ensures image responsiveness */
   height: auto;
@@ -85,6 +90,21 @@
   margin-bottom: 30px;
 }
 
+/* Add this to your abc.css or carousel1.css */
+
+/* Default style for larger screens */
+.image-container2 {
+  width: 22%; /* Adjust as needed to fit 4 images per row with some spacing */
+  margin: 20px;
+}
+
+/* For smaller screens */
+@media (max-width: 1024px) {
+  .image-container2 {
+    width: 45%; /* Adjust as needed to fit 2 images per row */
+    margin: 5px;
+  }
+}
 
 
 /* Grid container for images */

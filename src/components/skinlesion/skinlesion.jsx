@@ -3,10 +3,6 @@ import { useState, useEffect } from 'react';
 import "../abc.css";
 import "./carousel1.css";
 import Carousel from './Carousel'; 
-import hs1 from './readmore/hs1.png';
-import hs2 from './readmore/hs2.png';
-import hs3 from './readmore/hs3.png';
-import hs4 from './readmore/hs4.png';
 
 const Section = (props) => {
   const { children, mobileTop, showCarousel } = props;
@@ -15,7 +11,7 @@ const Section = (props) => {
     <motion.section
       className={`
         h-screen w-screen p-8 max-w-screen-2xl mx-auto
-        flex flex-col items-start
+        flex flex-col items-start 
         ${mobileTop ? "justify-start md:justify-center" : "justify-center"}
       `}
       initial={{
@@ -42,7 +38,7 @@ const AboutSection = (props) => {
   const { setSection } = props;
 
   return (
-    <div>
+    <div style={{ marginTop: '-80px' }}>
       <div style={{ marginBottom: '45px' }}>
         <div>
           <span className="text-6xl md:text-6xl lg:text-7xl font-bold leading-snug" style={{
@@ -52,17 +48,7 @@ const AboutSection = (props) => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             display: 'inline-block'
-          }}>HydroSync</span>
-        </div>
-        <div>
-          <span className="text-sm sm:text-base md:text-xl md:mt-0" style={{
-            marginBottom: '0px',
-            fontFamily: "'Sometype Mono', monospace",
-            background: 'linear-gradient(45deg, #fc307f,#9c12fc)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            display: 'inline'
-          }}>MedHack 2024: A 48-hour hackathon driving innovation in aged-care.</span>
+          }}>SkinCheckup</span>
         </div>
       </div>
       <motion.div
@@ -71,7 +57,7 @@ const AboutSection = (props) => {
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}>
-        <p>⭐️ HydroSync provides a non-invasive hydration monitoring solution, allowing families to track their loved ones' hydration levels via our app. Our mission is to tackle elderly dehydration, a often ignored issue with profound health impacts.</p>
+        <p>⭐️ SkinCheckup is an AI-powered website where users can upload an image of their skin lesion to get a prediction about the type of lesion they have: Basal cell carcinoma, Melanocytic nevus, Dermatofibroma, Benign keratosis, Actinic keratosis, Melanoma, or Vascular lesions.</p>
       </motion.div>
       <motion.div
         className="text-sm sm:text-base md:text-lg pb-3 mt-1 pt-3"
@@ -79,15 +65,15 @@ const AboutSection = (props) => {
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}>
-        <p>❓ How does it work? Electrodermal activity (EDA) patches seamlessly integrated into the sole of shoes collect data, which is then transmitted to our mobile app. Using this data, our app employs a basic convolutional neural network (CNN) model to analyze and establish personalized hydration thresholds based on EDA changes and individual data. It then displays hydration levels and alerts family members in case of alarming dehydration.</p>
+        <p>❓ How does it work? I experimented with different CNN models, both custom and pretrained such as DenseNet-121 and ResNet-50 to find the best accuracy. The website then takes the user's image, resizes it to 71x71x3 for model input, and informs the user about the type of skin lesion they have and educate them on the causes, symptoms, and treatments.</p>
       </motion.div>
       <motion.div
         className="text-sm sm:text-base md:text-lg pb-3 mt-1 pt-3"
         style={{ fontFamily: "'Sometype Mono', monospace", color: '#cccccc' }}
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 25 }}  
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}>
-        <p>🛠️ Built With: Python, React, TypeScript, Django, and CSS.</p>
+        <p>🛠️ Built With: Python, React JS, and Flask.</p>
       </motion.div>
     </div>
   );
@@ -119,14 +105,7 @@ const ImageRow = ({ images }) => {
   );
 };
 
-const TestPage5 = (props) => {
-  const images = [
-    { image: hs1, text: "Brainstorming ideas" },
-    { image: hs2, text: 'Final pitch' },
-    { image: hs3, text: '2 a.m on pitch day' },
-    { image: hs4, text: 'Team Aged Care 3' }
-  ];
-
+const TestPage40 = (props) => {
   const { setSection } = props;
   const [isMobile, setIsMobile] = useState(false);
   const [showCarousel, setShowCarousel] = useState(false);
@@ -149,22 +128,20 @@ const TestPage5 = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen min-h-screen" style={{ backgroundColor: '#0f0f0f', paddingTop: '110px' }}>
-      <div className="flex flex-col md:flex-row w-full" style={{ paddingBottom: '30px' }}>
+    <div className="flex flex-col items-center justify-center w-screen min-h-screen" style={{ backgroundColor: '#0f0f0f', paddingTop: '130px' }}>
+      <div className="flex flex-col md:flex-row w-full" style={{ paddingBottom: '60px' }}>
         <div className="w-full md:w-3/5 p-8"> {/* Text section */}
           <AboutSection setSection={props.setSection} />
         </div>
         <div className="w-full md:w-2/5 flex justify-center items-center"> {/* Carousel section */}
           <div style={{ position: 'relative', maxWidth: '100%', maxHeight: '500px' }}>
             {showCarousel ? <Carousel1 style={{ maxWidth: '100%', maxHeight: '500px' }} /> : <Carousel style={{ maxWidth: '100%', maxHeight: '500px' }} />}
+           
           </div>
         </div>
-      </div>
-      <div className="w-full flex justify-center mt-4 bg-gray-900 p-4" style={{ backgroundColor: '#0f0f0f', paddingBottom: '100px' }}>
-        <ImageRow images={images} />
       </div>
     </div>
   );
 };
 
-export default TestPage5;
+export default TestPage40;
