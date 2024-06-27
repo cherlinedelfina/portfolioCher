@@ -57,21 +57,21 @@ export const projects = [
     description: "Volunteer portal website for Mobilise to organize outreaches and facilitate volunteer participation.",
   },
   {
-    title: "HydroSync",
-    url: "/hydrosync",
-    image: "projects/Hydrosync.png",
-    description: "Hydration monitoring solution that utilizes convolutional neural network to assess hydration levels from Electrodermal Activity.",
-  },
-  {
     title: "Skin Lesion Classification",
     url: "/skinlesion",
     image: "projects/skin1.png",
     description: "Skin lesion identification website with convolutional neural network.",
   },
   {
-    title: "Image Generation",
+    title: "HydroSync",
+    url: "/hydrosync",
+    image: "projects/Hydrosync.png",
+    description: "Hydration monitoring solution that utilizes k-means clustering to detect dehydration from photoplethysymography and atmospheric pressure.",
+  },
+  {
+    title: "Scene Graph Generation",
     image: "projects/GNN.png",
-    description: "A generative model utilizing graph neural network  to produce images from scene graph descriptions.",
+    description: "Trained a convolutional neural network model for object detection and generated scene graphs.",
   },
   {
     title: "Road Entity Detection System",
