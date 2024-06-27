@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import "../abc.css";
 import "./carousel1.css";
 import Carousel from './Carousel'; 
-import hs1 from './readmore/hs1.png';
+import hs10 from './readmore/hs1.png';
 import hs2 from './readmore/hs2.png';
-import hs3 from './readmore/hs3.png';
+import hs30 from './readmore/hs3.png';
 import hs4 from './readmore/hs4.png';
 
 const Section = (props) => {
@@ -121,8 +121,8 @@ const ImageRow = ({ images }) => {
 
 const TestPage5 = (props) => {
   const images = [
-    { image: hs1, text: "PCA" },
-    { image: hs2, text: 'K-means' },
+    { image: hs10, text: "PCA" },
+    { image: hs30, text: 'K-means' },
     { image: hs2, text: 'Final pitch' },
     { image: hs4, text: 'Team Aged Care 3' }
   ];
