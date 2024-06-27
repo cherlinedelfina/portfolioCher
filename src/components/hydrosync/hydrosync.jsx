@@ -79,7 +79,7 @@ const AboutSection = (props) => {
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}>
-        <p>❓ How does it work? Electrodermal activity (EDA) patches seamlessly integrated into the sole of shoes collect data, which is then transmitted to our mobile app. Using this data, our app employs a basic convolutional neural network (CNN) model to analyze and establish personalized hydration thresholds based on EDA changes and individual data. It then displays hydration levels and alerts family members in case of alarming dehydration.</p>
+        <p>❓ How does it work? photoplethysmography (PPG) patch seamlessly integrated into the sole of shoes collect data, which is then transmitted to our mobile app. Using this data, our app employs a basic k-means clustering to analyze and establish personalized hydration thresholds based on photoplethysmography and atmospheric pressure. It then displays hydration levels and alerts family members in case of alarming dehydration.</p>
       </motion.div>
       <motion.div
         className="text-sm sm:text-base md:text-lg pb-3 mt-1 pt-3"
@@ -121,9 +121,9 @@ const ImageRow = ({ images }) => {
 
 const TestPage5 = (props) => {
   const images = [
-    { image: hs1, text: "Brainstorming ideas" },
+    { image: hs1, text: "PCA" },
+    { image: hs2, text: 'K-means' },
     { image: hs2, text: 'Final pitch' },
-    { image: hs3, text: '2 a.m on pitch day' },
     { image: hs4, text: 'Team Aged Care 3' }
   ];
 
