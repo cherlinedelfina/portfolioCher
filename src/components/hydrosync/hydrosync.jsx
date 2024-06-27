@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import "../abc.css";
 import "./carousel1.css";
 import Carousel from './Carousel'; 
-import hs10 from './readmore/hs1.png';
+import hs10 from './readmore/hs10.png';
 import hs2 from './readmore/hs2.png';
-import hs30 from './readmore/hs3.png';
+import hs30 from './readmore/hs30.png';
 import hs4 from './readmore/hs4.png';
 
 const Section = (props) => {
