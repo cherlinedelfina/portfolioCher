@@ -204,7 +204,7 @@ const ExperienceSection = () => {
       title: "Artificial Intelligence Engineer",
       company: "Monash DeepNeuron",
       duration: "Apr 2023 - Present",
-      description: 'Collaborated with a team of 4 on various projects: CNN skin lesion classification, YOLOV7 for video road entity detection, generated scene graphs from bounding boxes using GNN. Presented findings in 2 winter showcases.', 
+      description: 'Collaborated with a team of 4 on various projects: CNN skin lesion classification, YOLOV7 for video road entity detection, CNN object detection to generate scene graphs from COCO images. Presented findings in 2 winter showcases.', 
     },
     { 
       title: 'Lead Technical Consultant',
