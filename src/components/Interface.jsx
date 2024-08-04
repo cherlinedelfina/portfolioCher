@@ -195,10 +195,16 @@ const ExperienceSection = () => {
   });
   const experiences = [
     {
+      title: "Machine Learning Intern",
+      company: "Additive Assurance",
+      duration: "Jul 2024 - Aug 2024",
+      description: 'Developed a geometric similarity package using SIFT and LOFTR for feature extraction with selective invariance. Achieved an accuracy rate of 95.9% by experimenting with various threshold levels and matching techniques. Employed DBSCAN to cluster builds based on geometric similarity, to optimise train-test-validation splits to enhance the CNN model&apos;s ability to predict defects in unseen builds. Enhanced data quality through defect labeling using Anno and Geeqie.', 
+    },
+    {
       title: "Artificial Intelligence Engineer",
       company: "Monash DeepNeuron",
       duration: "Apr 2023 - Present",
-      description: 'Collaborated with a team of 5 to develop a generative model integrating GNN backbone, advanced graph learning techniques, and diffusion models to create images from scene graph descriptions. Presented findings at the 2023 Monash DeepNeuron Winter Project Showcase.', 
+      description: 'Collaborated with a team of 4 on various projects: CNN skin lesion classification, YOLOV7 for video road entity detection, generated scene graphs from bounding boxes using GNN. Presented findings in 2 winter showcases.', 
     },
     { 
       title: 'Lead Technical Consultant',
@@ -213,10 +219,10 @@ const ExperienceSection = () => {
       description: 'Collaborated with a team of 5 to develop a safe sleep mobile application for Red Nose, taking the lead in UI/UX design and primarily focusing on frontend development. Awarded for best content in 180DC semester 1, 2023.',
     },
     { 
-      title: 'Media Officer', 
-      company: 'CCA',
-      duration: 'Dec 2022 - Jan 2024',
-      description: "Researched target audience preferences to design visually engaging promotional materials using graphic design skills, enhancing brand visibility and driving audience engagement", 
+      title: 'Lead Consultant', 
+      company: 'Monash Institute of Medical Engineering',
+      duration: 'Feb 2023 - Jun 2023',
+      description: "Led a team of 4 to craft a comprehensive product launch business plan for the TAVI (Transcatheter Aortic Valve Implantation) stroke risk tool.", 
     },
     { 
       title: 'SEO Specialist', 
