@@ -198,12 +198,18 @@ const ExperienceSection = () => {
       title: "Machine Learning Intern",
       company: "Additive Assurance",
       duration: "Jul 2024 - Aug 2024",
-      description: 'Developed a geometric similarity package using SIFT and LOFTR for feature extraction with selective invariance. Achieved an accuracy rate of 95.9% by experimenting with various threshold levels and matching techniques. Employed DBSCAN to cluster builds based on geometric similarity, to optimise train-test-validation splits to enhance the CNN model&apos;s ability to predict defects in unseen builds. Enhanced data quality through defect labeling using Anno and Geeqie.', 
+      description: 'Developed a computer vision based visual structure comparison package to detect training-validation data contamination in CNN models, utilising SIFT and LoFTR for selective invariance, achieving 95.9% accuracy in alignment with human assessments. Applied DBSCAN clustering to explore optimal data partitioning strategies and enhanced data quality through defect labelling using Anno and Geeqie.', 
+    },
+    {
+      title: "Artificial Intelligence Project Manager",
+      company: "Monash DeepNeuron",
+      duration: "Jul 2024 - Present",
+      description: 'Lead a team of 4 in implementing CNN 3D U-Net for brain tumour segmentation and utilise GLPN model for depth estimation to convert 2D MRI scans into 3D visualisations. Manage project workflows in Asana and interview candidates for team recruitment.', 
     },
     {
       title: "Artificial Intelligence Engineer",
       company: "Monash DeepNeuron",
-      duration: "Apr 2023 - Present",
+      duration: "Apr 2023 - Jun 2024",
       description: 'Collaborated with a team of 4 on various projects: CNN skin lesion classification, YOLOV7 for video road entity detection, CNN object detection to generate scene graphs from COCO images. Presented findings in 2 winter showcases.', 
     },
     { 
@@ -223,12 +229,6 @@ const ExperienceSection = () => {
       company: 'Monash Institute of Medical Engineering',
       duration: 'Feb 2023 - Jun 2023',
       description: "Led a team of 4 to craft a comprehensive product launch business plan for the TAVI (Transcatheter Aortic Valve Implantation) stroke risk tool.", 
-    },
-    { 
-      title: 'SEO Specialist', 
-      company: 'Global Victoria Intellect Program',
-      duration: 'Apr 2023 - Apr 2023',
-      description: "Performed SEO keyword research, image optimization, and meta tag enhancements for Sirohi.", 
     }
   ];
 
