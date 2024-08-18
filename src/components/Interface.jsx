@@ -91,7 +91,7 @@ const AboutSection = (props) => {
   }, []);
 
   const openResume = () => {
-    window.open('projects/Resume2.png', '_blank');
+    window.open('projects/cv.png', '_blank');
   };
 
   return (
