@@ -55,7 +55,7 @@ export const projects = [
   {
     title: "Brain Tumor Segmentation",
     url: "/braintumor",
-    image: "projects/brainsegmentation.png",
+    image: "projects/brain_seg1.png",
     description: "3D Brain tumor segmentation with convolutional neural network (CNN).",
   },
   {

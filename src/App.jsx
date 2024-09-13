@@ -16,6 +16,7 @@ import TestPage3 from "./components/mobilise/mobilise";
 import TestPage4 from "./components/storysearch/storysearch";
 import TestPage5 from "./components/hydrosync/hydrosync";
 import TestPage40 from "./components/skinlesion/skinlesion";
+import TestPage400 from "./components/braintumor/braintumor";
 
 function App() {
   const [section, setSection] = useState(0);
