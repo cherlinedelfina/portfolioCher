@@ -29,12 +29,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/rednose" element={<TestPage2 />} /> {/* Define route for TestPage2 */}
-        <Route path="/mobilise" element={<TestPage3 />} /> {/* Define route for TestPage2 */}
-        <Route path="/storysearch" element={<TestPage4 />} /> {/* Define route for TestPage2 */}
-        <Route path="/hydrosync" element={<TestPage5 />} /> {/* Define route for TestPage2 */}
-        <Route path="/skinlesion" element={<TestPage40 />} /> {/* Define route for TestPage2 */}
-        <Route path="/*" element={<AppContent />} /> {/* Fallback route */}
+        <Route path="/rednose" element={<TestPage2 />} /> 
+        <Route path="/mobilise" element={<TestPage3 />} />
+        <Route path="/storysearch" element={<TestPage4 />} /> 
+        <Route path="/hydrosync" element={<TestPage5 />} /> 
+        <Route path="/skinlesion" element={<TestPage40 />} /> 
+        <Route path="/braintumor" element={<TestPage400 />} /> 
+        <Route path="/*" element={<AppContent />} />
       </Routes>
     </BrowserRouter>
   );

@@ -8,10 +8,6 @@ import * as THREE from 'three';
 import { Link } from 'react-router-dom';
 
 
-// Custom Text component with global font applied by default
-
-
-// Custom shader material for gradient
 const GradientMaterial = {
   uniforms: {
     color1: { value: new THREE.Color('#1c1c1c') }, // Red
@@ -55,6 +51,12 @@ export const projects = [
     url: "/mobilise",
     image: "projects/mobilise.png",
     description: "Volunteer portal website for Mobilise to organize outreaches and facilitate volunteer participation.",
+  },
+  {
+    title: "Brain Tumor Segmentation",
+    url: "/braintumor",
+    image: "projects/brainsegmentation.png",
+    description: "3D Brain tumor segmentation with convolutional neural network (CNN).",
   },
   {
     title: "Skin Lesion Classification",

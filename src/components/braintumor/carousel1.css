@@ -1,0 +1,141 @@
+@keyframes shadow-change {
+  from {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0));
+  }
+  to {
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
+  }
+
+}
+
+.carousel-container1 {
+  max-width: 80%; /* Adjusted to utilize available width */
+  position: relative;
+  margin-left: 35px; /* Center the carousel horizontally */
+  margin-right: 0px; /* Center the carousel horizontally */
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .carousel-container1 {
+    margin-left: 25px; /* Center the carousel horizontally */
+  margin-right: 0px; /* Center the carousel horizontally */
+  }
+}
+.carousel-image1 {
+  max-width: 100%; /* Ensures image responsiveness */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: shadow-change 5s ease forwards;
+}
+
+
+
+
+
+
+
+
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.carousel-controls.prev {
+  left: -30px; /* Adjusted for better alignment */
+}
+
+.carousel-controls.next {
+  right: -30px; /* Adjusted for better alignment */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 90%; /* Adjusted to utilize available width */
+  }
+
+  .carousel-controls {
+    font-size: 16px;
+  }
+}
+/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0f0f0f;
+}
+
+/* Flex container for content */
+.content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Section for additional content like AboutSection */
+.about-section {
+  margin-bottom: 30px;
+}
+
+/* Add this to your abc.css or carousel1.css */
+
+/* Default style for larger screens */
+.image-container2 {
+  width: 22%; /* Adjust as needed to fit 4 images per row with some spacing */
+  margin: 20px;
+}
+
+/* For smaller screens */
+@media (max-width: 1024px) {
+  .image-container2 {
+    width: 45%; /* Adjust as needed to fit 2 images per row */
+    margin: 5px;
+  }
+}
+
+
+/* Grid container for images */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust based on your image width or preferred grid size */
+  gap: 20px; /* Space between images */
+  padding: 20px; /* Padding around the entire grid */
+  width: 100%;
+}
+
+/* Individual image item styling */
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content */
+}
+
+.image-item img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: round corners */
+}
+
+.image-item p {
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff; /* White text color */
+  margin-top: 10px; /* Space between image and text */
+}
+
+
+
+

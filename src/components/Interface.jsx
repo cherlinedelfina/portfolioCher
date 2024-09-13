@@ -91,7 +91,7 @@ const AboutSection = (props) => {
   }, []);
 
   const openResume = () => {
-    window.open('projects/cv.png', '_blank');
+    window.open('projects/Resume1.png', '_blank');
   };
 
   return (
@@ -204,7 +204,7 @@ const ExperienceSection = () => {
       title: "Artificial Intelligence Project Manager",
       company: "Monash DeepNeuron",
       duration: "Jul 2024 - Present",
-      description: 'Lead a team of 4 in implementing CNN 3D U-Net for brain tumour segmentation and utilise GLPN model for depth estimation to convert 2D MRI scans into 3D visualisations. Manage project workflows in Asana and interview candidates for team recruitment.', 
+      description: 'Leading a team of 4 in developing a CNN-based 3D U-Net for brain tumor segmentation using MRI scans, incorporating 3D visualizations with Vedo. Presented our project at the Monash x AMTIL AI in Manufacturing event.', 
     },
     {
       title: "Artificial Intelligence Engineer",
