@@ -49,7 +49,7 @@ export const projects = [
   {
     title: "Dunder Debunk",
     url: "https://dunderdebunk.pages.dev/",
-    image: "projects/mobilise.png",
+    image: "projects/dunderdebunk.png",
     description: "Password: $mallAmber19. Web-based misinformation education tool that combines AI-driven fact-checking with interactive gamification and guided courses, and a Google Chrome extension.",
   },
   {
