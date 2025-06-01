@@ -47,6 +47,12 @@ export const projects = [
     description: "An AI-powered website delivering personalized picture books to counteract the decline in children's attention spans.",
   },
   {
+    title: "Dunder Debunk",
+    url: "https://dunderdebunk.pages.dev/",
+    image: "projects/mobilise.png",
+    description: "Password: $mallAmber19. Web-based misinformation education tool that combines AI-driven fact-checking with interactive gamification and guided courses, and a Google Chrome extension.",
+  },
+  {
     title: "Mobilise Platform",
     url: "/mobilise",
     image: "projects/mobilise.png",
@@ -108,10 +114,13 @@ const Project = (props) => {
  
   
   const handleTextClick = () => {
-    if (url) {
-      window.location.href = url;
+    if (url.startsWith("http")) {
+      window.open(url, "_blank"); // open external links in a new tab
+    } else {
+      window.location.href = url; // fallback for internal routes
     }
   };
+  
 
   return (
     <group {...props}>

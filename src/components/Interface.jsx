@@ -194,6 +194,12 @@ const ExperienceSection = () => {
     threshold: 0.5 // Adjust this threshold as needed
   });
   const experiences = [
+    { 
+      title: 'Software Engineer Intern', 
+      company: 'LikeMinded',
+      duration: 'Sep 2024 - Dec 2024',
+      description: "Designed the UI and built an event discussion forum with TypeScript, integrated GraphQL for real-time updates, and added manager privileges for overseeing activities. Developed group chat clustering users by shared hobbies using Jaccard similarity scoring.", 
+    },
     {
       title: "Machine Learning Intern",
       company: "Additive Assurance",
@@ -223,12 +229,6 @@ const ExperienceSection = () => {
       company: '180 Degrees Consulting',
       duration: 'Feb 2023 - Jun 2023',
       description: 'Collaborated with a team of 5 to develop a safe sleep mobile application for Red Nose, taking the lead in UI/UX design and primarily focusing on frontend development. Awarded for best content in 180DC semester 1, 2023.',
-    },
-    { 
-      title: 'Lead Consultant', 
-      company: 'Monash Institute of Medical Engineering',
-      duration: 'Feb 2023 - Jun 2023',
-      description: "Led a team of 4 to craft a comprehensive product launch business plan for the TAVI (Transcatheter Aortic Valve Implantation) stroke risk tool.", 
     }
   ];
 
