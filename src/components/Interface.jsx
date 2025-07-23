@@ -135,7 +135,7 @@ const AboutSection = (props) => {
     delay: 1.5,
   }}
 >
-  I'm pursuing my Master's in Artificial Intelligence at Monash University, with experience in full-stack software development. Additionally, I enjoy art and possess a keen eye for designing and coding clean, interactive frontends.
+  I'm a recent Master of Artificial Intelligence graduate from Monash University, with experience in machine learning and full-stack software development. I also enjoy art and possess a keen eye for designing and coding clean, interactive frontends!
 </motion.p>
 
 
