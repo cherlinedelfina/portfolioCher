@@ -135,7 +135,7 @@ const AboutSection = (props) => {
     delay: 1.5,
   }}
 >
-  I'm a recent Master of Artificial Intelligence graduate from Monash University, with experience in machine learning and full-stack software development. I also enjoy art and possess a keen eye for designing and coding clean, interactive frontends!
+  I’m a Junior AI Engineer with experience in machine learning and full-stack software development. I also enjoy art and possess a keen eye for designing and coding clean, interactive frontends!
 </motion.p>
 
 
@@ -195,6 +195,12 @@ const ExperienceSection = () => {
   });
   const experiences = [
     { 
+      title: 'Junior AI Engineer', 
+      company: 'SmileyScope',
+      duration: 'Aug 2025 - Dec 2025',
+      description: "Planned project timelines and end-to-end AI workflows, developing AI-generated meditation scripts for women’s health VR experiences using large language models (LLMs) with prompt engineering and retrieval-augmented generation (RAG).", 
+    },
+    { 
       title: 'Software Engineer Intern', 
       company: 'LikeMinded',
       duration: 'Sep 2024 - Dec 2024',
@@ -207,16 +213,10 @@ const ExperienceSection = () => {
       description: 'Developed a computer vision based visual structure comparison package to detect training-validation data contamination in CNN models, utilising SIFT and LoFTR for selective invariance, achieving 95.9% accuracy in alignment with human assessments. Applied DBSCAN clustering to explore optimal data partitioning strategies and enhanced data quality through defect labelling using Anno and Geeqie.', 
     },
     {
-      title: "Artificial Intelligence Project Manager",
+      title: "AI Project Manager",
       company: "Monash DeepNeuron",
-      duration: "Jul 2024 - Present",
-      description: 'Leading a team of 4 in developing a CNN-based 3D U-Net for brain tumor segmentation using MRI scans, incorporating 3D visualizations with Vedo. Presented our project at the Monash x AMTIL AI in Manufacturing event.', 
-    },
-    {
-      title: "Artificial Intelligence Engineer",
-      company: "Monash DeepNeuron",
-      duration: "Apr 2023 - Jun 2024",
-      description: 'Collaborated with a team of 4 on various projects: CNN skin lesion classification, YOLOV7 for video road entity detection, CNN object detection to generate scene graphs from COCO images. Presented findings in 2 winter showcases.', 
+      duration: "Apr 2023 - Jun 2025",
+      description: 'Led a team of 4 on various projects: developing a CNN-based 3D U-Net for brain tumor segmentation using MRI scans, CNN skin lesion classification, YOLOV7 for video road entity detection, CNN object detection to generate scene graphs from COCO images.', 
     },
     { 
       title: 'Lead Technical Consultant',
